@@ -1,0 +1,23 @@
+{
+  "name": "ukiyo-travel",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Ukiyo Travel — User Panel + Admin Panel on one shared Express/MongoDB backend.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "install:all": "npm --prefix backend install",
+    "dev:all": "node scripts/dev-all.js",
+    "start": "node scripts/dev-all.js",
+    "start:all": "node scripts/dev-all.js",
+    "start:backend": "npm --prefix backend start",
+    "dev:backend": "npm --prefix backend run dev",
+    "start:user": "node user-panel/server.js",
+    "start:admin": "node admin-panel/server.js",
+    "seed:admin": "npm --prefix backend run seed:admin",
+    "migrate": "npm --prefix backend run migrate",
+    "migrate:apply": "npm --prefix backend run migrate:apply",
+    "test": "npm --prefix backend test",
+    "test:integration": "npm --prefix backend run test:integration"
+  },
+  "license": "MIT"
+}

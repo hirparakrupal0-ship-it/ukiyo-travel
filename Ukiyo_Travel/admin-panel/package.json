@@ -1,0 +1,1 @@
+{ "name": "ukiyo-travel-admin-panel", "version": "2.0.0", "private": true, "description": "Ukiyo Travel admin panel (static site + tiny dev server, no dependencies)", "scripts": { "start": "node server.js" } }

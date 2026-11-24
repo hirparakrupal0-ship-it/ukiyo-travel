@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Ukiyo Travel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body class="profile-page">
+
+    <div class="profile-wrap">
+
+        <!-- Top bar -->
+        <div class="profile-topbar">
+            <a href="index.html" class="brand-link" aria-label="Ukiyo Travel Home">
+                <img src="assets/ukiyo-travel-logo.png" alt="Ukiyo Travel">
+            </a>
+            <div class="top-actions">
+                <a href="index.html" class="btn-ghost"><i class="bi bi-house"></i> Home</a>
+                <button type="button" class="btn-ghost" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+            </div>
+        </div>
+
+        <!-- Loading placeholder -->
+        <div class="profile-loading" id="loading">
+            <i class="bi bi-arrow-repeat"></i> Loading your profile…
+        </div>
+
+        <!-- Content (hidden until loaded) -->
+        <div class="profile-grid" id="content" style="display:none;">
+
+            <!-- Identity card -->
+            <aside class="card identity-card">
+                <div class="avatar" id="avatar">--</div>
+                <h2 id="displayName">—</h2>
+                <p class="email" id="displayEmail">—</p>
+
+                <div class="identity-meta">
+                    <div class="row"><i class="bi bi-geo-alt"></i> <span id="metaLocation" class="muted">Location not set</span></div>
+                    <div class="row"><i class="bi bi-telephone"></i> <span id="metaPhone" class="muted">Phone not set</span></div>
+                    <div class="row"><i class="bi bi-calendar-heart"></i> <span id="metaJoined">Member</span></div>
+                </div>
+            </aside>
+
+            <!-- Editable details -->
+            <main style="display:grid; gap:22px;">
+
+                <!-- Profile details card -->
+                <section class="card">
+                    <h3>Profile details</h3>
+                    <p class="card-sub">Update your personal information and travel identity.</p>
+
+                    <div class="alert ok" id="profileOk">Profile updated successfully.</div>
+                    <div class="alert err" id="profileErr">Something went wrong.</div>
+
+                    <form id="profileForm" novalidate>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="firstName">First Name</label>
+                                <input id="firstName" type="text" placeholder="Drashti" required>
+                            </div>
+                            <div class="field">
+                                <label for="lastName">Last Name</label>
+                                <input id="lastName" type="text" placeholder="Patel" required>
+                            </div>
+                            <div class="field full">
+                                <label for="email">Email Address</label>
+                                <input id="email" type="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="field">
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="text" placeholder="+91 90000 00000">
+                            </div>
+                            <div class="field">
+                                <label for="country">Country</label>
+                                <input id="country" type="text" placeholder="India">
+                            </div>
+                            <div class="field">
+                                <label for="city">City</label>
+                                <input id="city" type="text" placeholder="Surat">
+                            </div>
+                            <div class="field">
+                                <label for="avatarUrl">Avatar image URL</label>
+                                <input id="avatarUrl" type="url" placeholder="https://…/photo.jpg">
+                            </div>
+                            <div class="field full">
+                                <label for="bio">Bio</label>
+                                <textarea id="bio" rows="3" maxlength="300" placeholder="A few words about your travel style…"></textarea>
+                                <span class="hint"><span id="bioCount">0</span>/300</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-solid" id="saveProfileBtn">
+                                <i class="bi bi-check2"></i> Save changes
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Change password card -->
+                <section class="card">
+                    <h3>Change password</h3>
+                    <p class="card-sub">Choose a strong password you don't use elsewhere.</p>
+
+                    <div class="alert ok" id="passOk">Password changed successfully.</div>
+                    <div class="alert err" id="passErr">Something went wrong.</div>
+
+                    <form id="passwordForm" novalidate>
+                        <div class="form-grid">
+                            <div class="field full">
+                                <label for="currentPassword">Current Password</label>
+                                <input id="currentPassword" type="password" placeholder="Enter current password" required>
+                            </div>
+                            <div class="field">
+                                <label for="newPassword">New Password</label>
+                                <input id="newPassword" type="password" placeholder="Minimum 6 characters" minlength="6" required>
+                            </div>
+                            <div class="field">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input id="confirmPassword" type="password" placeholder="Re-enter new password" minlength="6" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-solid" id="savePassBtn">
+                                <i class="bi bi-shield-lock"></i> Update password
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+<script src="config.js"></script>
+    <script src="js/date-rules.js"></script>
+<script src="js/auth-api.js"></script>
+<script>
+(function () {
+    // Guard: must be logged in.
+    if (!UkiyoAuth.requireAuth("login.html")) return;
+
+    const $ = (id) => document.getElementById(id);
+
+    function initials(first, last) {
+        const a = (first || "").trim()[0] || "";
+        const b = (last || "").trim()[0] || "";
+        return (a + b).toUpperCase() || "U";
+    }
+
+    function showAlert(el, msg, type) {
+        el.textContent = msg;
+        el.className = "alert " + (type === "ok" ? "ok" : "err") + " show";
+        // Hide the counterpart alert in the same card.
+        setTimeout(() => {}, 0);
+    }
+    function hideAlerts(...els) { els.forEach((e) => (e.className = e.className.replace(" show", ""))); }
+
+    function fillForm(u) {
+        $("firstName").value = u.firstName || "";
+        $("lastName").value = u.lastName || "";
+        $("email").value = u.email || "";
+        $("phone").value = u.phone || "";
+        $("country").value = u.country || "";
+        $("city").value = u.city || "";
+        $("avatarUrl").value = u.avatarUrl || "";
+        $("bio").value = u.bio || "";
+        $("bioCount").textContent = String((u.bio || "").length);
+
+        // Identity card
+        $("displayName").textContent = `${u.firstName || ""} ${u.lastName || ""}`.trim() || "Traveller";
+        $("displayEmail").textContent = u.email || "";
+        const av = $("avatar");
+        if (u.avatarUrl) {
+            av.innerHTML = `<img src="${u.avatarUrl}" alt="Avatar" onerror="this.parentNode.textContent='${initials(u.firstName, u.lastName)}'">`;
+        } else {
+            av.textContent = initials(u.firstName, u.lastName);
+        }
+        const loc = [u.city, u.country].filter(Boolean).join(", ");
+        const locEl = $("metaLocation");
+        locEl.textContent = loc || "Location not set";
+        locEl.className = loc ? "" : "muted";
+        const phEl = $("metaPhone");
+        phEl.textContent = u.phone || "Phone not set";
+        phEl.className = u.phone ? "" : "muted";
+        if (u.createdAt) {
+            const d = new Date(u.createdAt);
+            $("metaJoined").textContent = "Joined " + d.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+        }
+    }
+
+    // Load profile from the API.
+    UkiyoAuth.getProfile()
+        .then((res) => {
+            UkiyoAuth.setUser(res.user);
+            fillForm(res.user);
+            $("loading").style.display = "none";
+            $("content").style.display = "grid";
+        })
+        .catch((err) => {
+            // 401 already clears the session in the helper.
+            $("loading").innerHTML =
+                '<i class="bi bi-exclamation-triangle"></i> ' +
+                (err.message || "Could not load profile") +
+                ' &nbsp;<a href="login.html">Login again</a>';
+        });
+
+    // Live bio counter
+    $("bio").addEventListener("input", function () {
+        $("bioCount").textContent = String(this.value.length);
+    });
+
+    // Save profile
+    $("profileForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        hideAlerts($("profileOk"), $("profileErr"));
+        const btn = $("saveProfileBtn");
+        const original = btn.innerHTML;
+
+        const payload = {
+            firstName: $("firstName").value.trim(),
+            lastName: $("lastName").value.trim(),
+            email: $("email").value.trim(),
+            phone: $("phone").value.trim(),
+            country: $("country").value.trim(),
+            city: $("city").value.trim(),
+            avatarUrl: $("avatarUrl").value.trim(),
+            bio: $("bio").value.trim(),
+        };
+
+        if (!payload.firstName || !payload.lastName || !payload.email) {
+            showAlert($("profileErr"), "First name, last name and email are required.", "err");
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = "Saving…";
+        try {
+            const res = await UkiyoAuth.updateProfile(payload);
+            UkiyoAuth.setUser(res.user);
+            fillForm(res.user);
+            showAlert($("profileOk"), res.message || "Profile updated successfully.", "ok");
+        } catch (err) {
+            showAlert($("profileErr"), err.message || "Update failed.", "err");
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = original;
+        }
+    });
+
+    // Change password
+    $("passwordForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        hideAlerts($("passOk"), $("passErr"));
+        const btn = $("savePassBtn");
+        const original = btn.innerHTML;
+
+        const current = $("currentPassword").value;
+        const next = $("newPassword").value;
+        const confirm = $("confirmPassword").value;
+
+        if (next.length < 6) {
+            showAlert($("passErr"), "New password must be at least 6 characters.", "err");
+            return;
+        }
+        if (next !== confirm) {
+            showAlert($("passErr"), "New passwords do not match.", "err");
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = "Updating…";
+        try {
+            const res = await UkiyoAuth.changePassword({ currentPassword: current, newPassword: next });
+            showAlert($("passOk"), res.message || "Password changed successfully.", "ok");
+            this.reset();
+        } catch (err) {
+            showAlert($("passErr"), err.message || "Could not change password.", "err");
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = original;
+        }
+    });
+
+    // Logout
+    $("logoutBtn").addEventListener("click", function () {
+        UkiyoAuth.logout();
+        window.location.href = "login.html";
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "ukiyo-travel-backend",
+  "version": "2.0.0",
+  "description": "Shared Express + MongoDB API for the Ukiyo Travel User Panel and Admin Panel.",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed:admin": "node seed/createAdmin.js",
+    "seed:export": "node seed/exportCatalog.js",
+    "migrate": "node seed/migrateBookings.js",
+    "migrate:apply": "node seed/migrateBookings.js --apply",
+    "test": "node tests/engines.test.js && node tests/http-smoke.test.js && node tests/routes.test.js",
+    "test:integration": "node tests/integration.test.js"
+  },
+  "keywords": ["ukiyo", "travel", "express", "mongodb", "jwt"],
+  "author": "Ukiyo Travel",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.0",
+    "razorpay": "^2.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

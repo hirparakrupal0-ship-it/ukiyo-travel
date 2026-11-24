@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Ukiyo Travel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+    <main class="auth-shell">
+
+        <section class="auth-brand">
+            <a href="index.html" class="auth-logo-image-link" aria-label="Ukiyo Travel Home">
+                <img src="assets/ukiyo-travel-logo.png" class="auth-logo-image" alt="Ukiyo Travel">
+            </a>
+
+            <div class="auth-brand-content">
+                <div class="eyebrow">WELCOME BACK</div>
+                <h1>Continue Your <span>Journey.</span></h1>
+                <p>Sign in to access your saved destinations, travel preferences, wishlist and personalized Ukiyo experience.</p>
+            </div>
+
+            <p class="auth-quote">“A journey through the beautiful moments of life.”</p>
+        </section>
+
+        <section class="auth-form-area">
+
+            <div class="auth-top">
+                <a href="index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Ukiyo Travel</a>
+            </div>
+
+            <div class="auth-heading">
+                <h2>Welcome back 👋</h2>
+                <p>Login to continue planning your next beautiful escape.</p>
+            </div>
+
+            <div class="auth-error" id="loginError">Please enter a valid email and password.</div>
+            <div class="auth-success" id="loginSuccess">Demo login successful. Welcome back to Ukiyo Travel! ✈️</div>
+
+            <form id="loginForm" novalidate>
+
+                <div class="auth-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="auth-input-wrap">
+                        <i class="bi bi-envelope"></i>
+                        <input class="auth-input" id="loginEmail" type="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="auth-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="auth-input-wrap">
+                        <i class="bi bi-lock"></i>
+                        <input class="auth-input" id="loginPassword" type="password" placeholder="Enter your password" minlength="6" required>
+                        <button class="auth-password-toggle" type="button" data-target="loginPassword" aria-label="Show password">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="auth-row">
+                    <label class="auth-check">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+                    <a href="#" class="auth-link" onclick="return false;">Forgot password?</a>
+                </div>
+
+                <button class="auth-submit" type="submit">
+                    Login to Ukiyo <i class="bi bi-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <div class="auth-divider">OR</div>
+
+            <p class="auth-switch">
+                New to Ukiyo Travel?
+                <a href="register.html">Create an account</a>
+            </p>
+
+        </section>
+    </main>
+
+<script src="config.js"></script>
+    <script src="js/date-rules.js"></script>
+<script src="js/auth-api.js"></script>
+<script>
+document.querySelectorAll(".auth-password-toggle").forEach(function(btn){
+    btn.addEventListener("click", function(){
+        const input = document.getElementById(btn.dataset.target);
+        const icon = btn.querySelector("i");
+        if(input.type === "password"){
+            input.type = "text";
+            icon.classList.replace("bi-eye","bi-eye-slash");
+        }else{
+            input.type = "password";
+            icon.classList.replace("bi-eye-slash","bi-eye");
+        }
+    });
+});
+
+document.getElementById("loginForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail");
+    const password = document.getElementById("loginPassword");
+    const error = document.getElementById("loginError");
+    const success = document.getElementById("loginSuccess");
+    const submitBtn = this.querySelector(".auth-submit");
+
+    error.style.display = "none";
+    success.style.display = "none";
+
+    if(!email.value.trim() || !email.validity.valid || password.value.length < 6){
+        error.textContent = "Please enter a valid email and password.";
+        error.style.display = "block";
+        return;
+    }
+
+    submitBtn.disabled = true;
+    const originalHtml = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Signing in…';
+
+    try {
+        const data = await UkiyoAuth.login({
+            email: email.value.trim(),
+            password: password.value
+        });
+        UkiyoAuth.saveSession(data);
+        success.textContent = "Login successful. Welcome back to Ukiyo Travel! ✈️";
+        success.style.display = "block";
+        setTimeout(function(){ window.location.href = "index.html"; }, 900);
+    } catch (err) {
+        error.textContent = err.message || "Login failed. Please try again.";
+        error.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHtml;
+    }
+});
+</script>
+
+</body>
+</html>

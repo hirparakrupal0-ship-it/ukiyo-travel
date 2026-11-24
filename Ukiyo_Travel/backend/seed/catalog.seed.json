@@ -1,0 +1,224 @@
+{
+  "destinations": [
+    {
+      "slug": "goa",
+      "name": "Goa",
+      "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
+      "short": "Beaches, nightlife and luxury resorts.",
+      "description": "Sun-soaked beaches, buzzing nightlife and laid-back cafés — Goa blends Portuguese charm with tropical energy. Perfect for beach lovers and party-seekers alike.",
+      "highlights": [
+        "Baga & Palolem beaches",
+        "Water sports",
+        "Beach shacks & nightlife",
+        "Old Goa churches"
+      ],
+      "bestTime": "Nov – Feb",
+      "priceFrom": "₹9,999"
+    },
+    {
+      "slug": "kashmir",
+      "name": "Kashmir",
+      "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=85",
+      "short": "Heaven on earth with snowy mountains.",
+      "description": "Snow-capped peaks, shimmering Dal Lake and blooming valleys make Kashmir a dream for romance and scenery. Shikara rides, houseboats and gardens await.",
+      "highlights": [
+        "Dal Lake & houseboats",
+        "Gulmarg gondola",
+        "Mughal gardens",
+        "Snow in winter"
+      ],
+      "bestTime": "Mar – Oct",
+      "priceFrom": "₹14,999"
+    },
+    {
+      "slug": "kerala",
+      "name": "Kerala",
+      "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
+      "short": "Backwaters, greenery and peaceful nature.",
+      "description": "God's Own Country — tranquil backwaters, lush tea hills and Ayurvedic calm. Cruise a houseboat, sip fresh chai in Munnar and unwind by the coast.",
+      "highlights": [
+        "Alleppey backwaters",
+        "Munnar tea gardens",
+        "Ayurveda retreats",
+        "Kathakali culture"
+      ],
+      "bestTime": "Sep – Mar",
+      "priceFrom": "₹11,999"
+    },
+    {
+      "slug": "rajasthan",
+      "name": "Rajasthan",
+      "image": "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
+      "short": "Royal forts, palaces and desert culture.",
+      "description": "Majestic forts, palace hotels and golden dunes. Rajasthan is heritage and luxury — from Udaipur's lakes to Jaisalmer's desert camps.",
+      "highlights": [
+        "Udaipur lake palaces",
+        "Jaisalmer desert safari",
+        "Amber Fort",
+        "Royal dining"
+      ],
+      "bestTime": "Oct – Mar",
+      "priceFrom": "₹16,499"
+    },
+    {
+      "slug": "meghalaya",
+      "name": "Meghalaya",
+      "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85",
+      "short": "Waterfalls, living-root bridges and clouds.",
+      "description": "The abode of clouds — living-root bridges, crystal rivers and endless waterfalls. Cherrapunji and Dawki offer nature at its purest.",
+      "highlights": [
+        "Living-root bridges",
+        "Dawki clear river",
+        "Nohkalikai Falls",
+        "Cave exploring"
+      ],
+      "bestTime": "Oct – Apr",
+      "priceFrom": "₹13,499"
+    },
+    {
+      "slug": "andaman",
+      "name": "Andaman",
+      "image": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=900&q=85",
+      "short": "Turquoise waters and coral reefs.",
+      "description": "Powder-white sands, coral reefs and scuba adventures. Radhanagar Beach is among the world's finest — pure island escape.",
+      "highlights": [
+        "Radhanagar Beach",
+        "Scuba & snorkelling",
+        "Cellular Jail",
+        "Island hopping"
+      ],
+      "bestTime": "Oct – May",
+      "priceFrom": "₹22,999"
+    }
+  ],
+  "packages": [
+    {
+      "id": "goa-escape",
+      "title": "Goa Escape",
+      "destination": "goa",
+      "price": "₹9,999",
+      "duration": "4 Days / 3 Nights",
+      "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
+      "includes": [
+        "Return transfers",
+        "3-star beach stay",
+        "Daily breakfast",
+        "Sightseeing tour"
+      ]
+    },
+    {
+      "id": "kashmir-tour",
+      "title": "Kashmir Tour",
+      "destination": "kashmir",
+      "price": "₹14,999",
+      "duration": "5 Days / 4 Nights",
+      "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=85",
+      "includes": [
+        "Houseboat night",
+        "Gulmarg day trip",
+        "Breakfast & dinner",
+        "Shikara ride"
+      ]
+    },
+    {
+      "id": "kerala-holiday",
+      "title": "Kerala Holiday",
+      "destination": "kerala",
+      "price": "₹11,999",
+      "duration": "4 Days / 3 Nights",
+      "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
+      "includes": [
+        "Alleppey houseboat",
+        "Munnar stay",
+        "All breakfasts",
+        "Backwater cruise"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "id": "taj-goa",
+      "name": "Taj Beach Resort",
+      "city": "Goa",
+      "rating": 4.8,
+      "price": "₹6,500",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Beachfront",
+        "Pool",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "dal-view",
+      "name": "Dal View Houseboat",
+      "city": "Kashmir",
+      "rating": 4.7,
+      "price": "₹4,200",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Lake view",
+        "Traditional",
+        "All meals"
+      ]
+    },
+    {
+      "id": "backwater-villa",
+      "name": "Backwater Villa",
+      "city": "Kerala",
+      "rating": 4.9,
+      "price": "₹5,100",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Backwaters",
+        "Ayurveda",
+        "Free WiFi"
+      ]
+    },
+    {
+      "id": "royal-heritage",
+      "name": "Royal Heritage Palace",
+      "city": "Rajasthan",
+      "rating": 4.8,
+      "price": "₹8,900",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Heritage",
+        "Fine dining",
+        "Spa"
+      ]
+    },
+    {
+      "id": "cloud-retreat",
+      "name": "Cloud Retreat",
+      "city": "Meghalaya",
+      "rating": 4.6,
+      "price": "₹3,800",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Hilltop",
+        "Nature",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "island-sands",
+      "name": "Island Sands Resort",
+      "city": "Andaman",
+      "rating": 4.9,
+      "price": "₹9,500",
+      "perNight": true,
+      "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=85",
+      "tags": [
+        "Sea view",
+        "Diving",
+        "Pool"
+      ]
+    }
+  ]
+}

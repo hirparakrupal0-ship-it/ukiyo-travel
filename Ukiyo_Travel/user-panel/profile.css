@@ -1,0 +1,307 @@
+/* =========================================================
+   UKIYO TRAVEL — PROFILE PAGE
+   Matches the auth pages' premium light theme.
+========================================================= */
+
+.profile-page{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(23,190,187,.16), transparent 32%),
+        radial-gradient(circle at 92% 88%, rgba(255,184,77,.14), transparent 34%),
+        linear-gradient(135deg,#F7FBFA,#EEF7F7);
+    font-family:'Poppins',sans-serif;
+    color:#17324D;
+    padding:32px 16px 60px;
+}
+
+.profile-wrap{
+    width:min(960px,100%);
+    margin:0 auto;
+}
+
+/* ---------- Top bar ---------- */
+.profile-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:24px;
+}
+
+.profile-topbar .brand-link{
+    display:inline-flex;
+    align-items:center;
+}
+
+.profile-topbar .brand-link img{
+    width:170px;
+    height:66px;
+    object-fit:contain;
+    object-position:left center;
+}
+
+.profile-topbar .top-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-ghost,
+.btn-solid{
+    border-radius:12px;
+    font-size:12px;
+    font-weight:700;
+    padding:10px 18px;
+    text-decoration:none;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+}
+
+.btn-ghost{
+    color:#17324D;
+    background:#fff;
+    border-color:#DCEAE8;
+}
+
+.btn-ghost:hover{
+    border-color:#17BEBB;
+    color:#0D9F9C;
+}
+
+.btn-solid{
+    color:#fff;
+    background:linear-gradient(100deg,#17BEBB,#0D9F9C);
+    box-shadow:0 10px 22px rgba(23,190,187,.2);
+}
+
+.btn-solid:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(100deg,#FFB84D,#F29B30);
+    color:#071A2B;
+}
+
+.btn-solid:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* ---------- Layout ---------- */
+.profile-grid{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:22px;
+    align-items:start;
+}
+
+.card{
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 22px 55px rgba(7,26,43,.10);
+    padding:28px;
+}
+
+/* ---------- Identity card ---------- */
+.identity-card{
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.identity-card::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:96px;
+    background:linear-gradient(135deg,#0B1F33,#0D6E74);
+}
+
+.avatar{
+    position:relative;
+    width:104px;
+    height:104px;
+    margin:40px auto 14px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#17BEBB,#0D9F9C);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    font-weight:700;
+    border:4px solid #fff;
+    box-shadow:0 8px 22px rgba(7,26,43,.18);
+    overflow:hidden;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.identity-card h2{
+    font-size:21px;
+    font-weight:800;
+    margin:0 0 3px;
+    color:#0B1F33;
+}
+
+.identity-card .email{
+    font-size:12px;
+    color:#7C8A99;
+    margin:0 0 14px;
+    word-break:break-all;
+}
+
+.identity-meta{
+    text-align:left;
+    border-top:1px solid #EEF3F3;
+    padding-top:16px;
+    margin-top:4px;
+    display:grid;
+    gap:10px;
+}
+
+.identity-meta .row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:12px;
+    color:#4A5A6A;
+}
+
+.identity-meta .row i{
+    color:#17BEBB;
+    font-size:15px;
+    width:18px;
+    text-align:center;
+}
+
+.identity-meta .row span.muted{
+    color:#A2AEB8;
+}
+
+/* ---------- Forms ---------- */
+.card h3{
+    font-size:16px;
+    font-weight:800;
+    color:#0B1F33;
+    margin:0 0 4px;
+}
+
+.card .card-sub{
+    font-size:11px;
+    color:#8190A0;
+    margin:0 0 20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 16px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+.field.full{
+    grid-column:1 / -1;
+}
+
+.field label{
+    font-size:10px;
+    font-weight:700;
+    color:#17324D;
+    margin-bottom:6px;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    border:1px solid #D9E7E5;
+    border-radius:12px;
+    background:#FBFDFC;
+    color:#17324D;
+    padding:11px 14px;
+    font-size:12px;
+    font-family:'Poppins',sans-serif;
+    outline:none;
+    transition:.2s;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:#17BEBB;
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(23,190,187,.09);
+}
+
+.field .hint{
+    font-size:9px;
+    color:#A2AEB8;
+    margin-top:5px;
+}
+
+.form-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:20px;
+}
+
+.section-divider{
+    height:1px;
+    background:#EEF3F3;
+    margin:26px 0;
+    border:0;
+}
+
+/* ---------- Alerts ---------- */
+.alert{
+    display:none;
+    padding:11px 14px;
+    border-radius:11px;
+    font-size:11px;
+    margin-bottom:16px;
+}
+
+.alert.show{ display:block; }
+
+.alert.ok{
+    background:#ECFBF9;
+    border:1px solid #C7EFEB;
+    color:#087E7B;
+}
+
+.alert.err{
+    background:#FFF1F1;
+    border:1px solid #FFD6D6;
+    color:#D84C4C;
+}
+
+/* ---------- Loading state ---------- */
+.profile-loading{
+    text-align:center;
+    padding:60px 0;
+    color:#7C8A99;
+    font-size:13px;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:820px){
+    .profile-grid{ grid-template-columns:1fr; }
+}
+
+@media(max-width:520px){
+    .form-grid{ grid-template-columns:1fr; }
+    .profile-topbar .brand-link img{ width:140px; height:54px; }
+    .card{ padding:22px; }
+}

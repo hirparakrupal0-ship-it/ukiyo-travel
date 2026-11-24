@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukiyo Travel | Explore Beyond Limits</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top custom-nav">
+        <div class="container">
+
+            <a class="navbar-brand ukiyo-logo-link" href="#home" aria-label="Ukiyo Travel Home">
+                <img src="assets/ukiyo-travel-logo.png" class="ukiyo-logo-img" alt="Ukiyo Travel">
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+
+                    <!-- Explore dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#moodtrip">✨ Find Your Ukiyo</a></li>
+                            <li><a class="dropdown-item" href="#destinations">🌍 Destinations</a></li>
+                            <li><a class="dropdown-item" href="#packages">🎒 Packages</a></li>
+                            <li><a class="dropdown-item" href="#hotels">🏨 Hotels</a></li>
+                            <li><a class="dropdown-item" href="#gallery">📸 Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Smart Travel dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Smart Travel
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#travel-dna">🧬 Travel DNA</a></li>
+                            <li><a class="dropdown-item" href="#regret-free">🛡️ Regret-Free Trip</a></li>
+                            <li><a class="dropdown-item" href="#planner">🎒 Trip Planner</a></li>
+                            <li><a class="dropdown-item" href="#smart-match">🗺️ Match Scores</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item d-none" id="navTripsItem">
+                        <a class="nav-link js-open-trips" href="#">My Trips</a>
+                    </li>
+
+                    <li class="nav-item d-none" id="navAdminItem">
+                        <a class="nav-link" id="navAdminLink" href="#" target="_blank" rel="noopener"><i class="bi bi-speedometer2"></i> Admin</a>
+                    </li>
+
+                </ul>
+
+                <button type="button" class="btn nav-wish-btn ms-lg-3 js-open-wishlist" title="My wishlist" aria-label="My wishlist">
+                    <i class="bi bi-heart-fill"></i>
+                    <span class="wish-count" id="wishCount">0</span>
+                </button>
+
+                <a href="login.html" class="btn login-btn ms-lg-2" id="navAuthBtn">
+                    Login
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="hero-tag">
+                        EXPLORE • DISCOVER • ENJOY
+                    </span>
+
+                    <h1>
+                        Discover Beautiful Places With
+                        <span>Ukiyo Travel</span>
+                    </h1>
+                    <p class="ukiyo-tagline">
+                        “A journey through the beautiful moments of life.”
+                    </p>
+
+                    <p>
+
+                        Plan your dream vacation with premium destinations,
+                        affordable packages, luxury hotels, and unforgettable
+                        experiences.
+
+                    </p>
+
+                    <div class="hero-search shadow">
+
+                        <input type="text" id="heroSearchInput"
+                            placeholder="Search your destination..."
+                            list="destinationList">
+                        <datalist id="destinationList"></datalist>
+
+                        <button id="heroSearchBtn">
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <a href="#packages" class="btn hero-btn">
+                            Explore Tours
+                        </a>
+
+                        <a href="#moodtrip" class="btn hero-outline">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+                        class="img-fluid hero-img" alt="Beautiful tropical beach destination">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="hero-stats">
+
+        <div class="container">
+
+            <div class="row text-center">
+
+                <div class="col-md-3">
+
+                    <h2>15K+</h2>
+
+                    <p>Happy Travelers</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>300+</h2>
+
+                    <p>Destinations</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>550+</h2>
+
+                    <p>Hotels</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>4.9★</h2>
+
+                    <p>Customer Rating</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= UNIQUE FEATURE: FIND YOUR UKIYO / MOODTRIP ================= -->
+    <section class="moodtrip-section" id="moodtrip">
+        <div class="container">
+            <div class="moodtrip-header text-center">
+                <span class="section-tag">UKIYO EXCLUSIVE</span>
+                <h2>Find Your <span>Ukiyo</span> ✨</h2>
+                <p>Don't just search for a destination. Choose how you want to feel.</p>
+            </div>
+
+            <!-- CSS-only selection: no custom JavaScript required -->
+            <div class="moodtrip-app">
+
+                <input type="radio" name="mood" id="mood-peace" checked>
+                <input type="radio" name="mood" id="mood-adventure">
+                <input type="radio" name="mood" id="mood-romance">
+                <input type="radio" name="mood" id="mood-fun">
+                <input type="radio" name="mood" id="mood-nature">
+                <input type="radio" name="mood" id="mood-luxury">
+
+                <div class="mood-options">
+                    <label for="mood-peace" class="mood-card">
+                        <div class="mood-icon">🌊</div>
+                        <strong>I Need Peace</strong>
+                        <small>Slow down & relax</small>
+                    </label>
+
+                    <label for="mood-adventure" class="mood-card">
+                        <div class="mood-icon">🏔️</div>
+                        <strong>I Want Adventure</strong>
+                        <small>Thrills & exploration</small>
+                    </label>
+
+                    <label for="mood-romance" class="mood-card">
+                        <div class="mood-icon">❤️</div>
+                        <strong>I Want Romance</strong>
+                        <small>Beautiful moments together</small>
+                    </label>
+
+                    <label for="mood-fun" class="mood-card">
+                        <div class="mood-icon">🎉</div>
+                        <strong>I Want Fun</strong>
+                        <small>Energy & entertainment</small>
+                    </label>
+
+                    <label for="mood-nature" class="mood-card">
+                        <div class="mood-icon">🌿</div>
+                        <strong>I Need Nature</strong>
+                        <small>Green escapes & fresh air</small>
+                    </label>
+
+                    <label for="mood-luxury" class="mood-card">
+                        <div class="mood-icon">👑</div>
+                        <strong>I Want Luxury</strong>
+                        <small>Premium experiences</small>
+                    </label>
+                </div>
+
+                <div class="mood-result mood-result-peace">
+                    <div class="result-icon">🌊</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Peace Seeker</h3>
+                        <p>Perfect for slow mornings, peaceful views and relaxing stays.</p>
+                    </div>
+                    <div class="match-box"><strong>92%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Kerala</b><b>Coorg</b><b>Andaman</b>
+                    </div>
+                </div>
+
+                <div class="mood-result mood-result-adventure">
+                    <div class="result-icon">🏔️</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Adventure Seeker</h3>
+                        <p>For mountain trails, exciting activities and unforgettable exploration.</p>
+                    </div>
+                    <div class="match-box"><strong>94%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Manali</b><b>Ladakh</b><b>Rishikesh</b>
+                    </div>
+                </div>
+
+                <div class="mood-result mood-result-romance">
+                    <div class="result-icon">❤️</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Romantic Soul</h3>
+                        <p>Beautiful sunsets, intimate stays and experiences made for two.</p>
+                    </div>
+                    <div class="match-box"><strong>91%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Udaipur</b><b>Goa</b><b>Kashmir</b>
+                    </div>
+                </div>
+
+                <div class="mood-result mood-result-fun">
+                    <div class="result-icon">🎉</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Fun Chaser</h3>
+                        <p>Nightlife, food, music and lively experiences without boring moments.</p>
+                    </div>
+                    <div class="match-box"><strong>89%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Goa</b><b>Mumbai</b><b>Jaipur</b>
+                    </div>
+                </div>
+
+                <div class="mood-result mood-result-nature">
+                    <div class="result-icon">🌿</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Nature Lover</h3>
+                        <p>Forests, waterfalls, fresh air and destinations away from city noise.</p>
+                    </div>
+                    <div class="match-box"><strong>96%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Meghalaya</b><b>Kerala</b><b>Coorg</b>
+                    </div>
+                </div>
+
+                <div class="mood-result mood-result-luxury">
+                    <div class="result-icon">👑</div>
+                    <div>
+                        <span>Your Ukiyo Mood</span>
+                        <h3>The Luxury Explorer</h3>
+                        <p>Premium hotels, fine dining and memorable high-comfort experiences.</p>
+                    </div>
+                    <div class="match-box"><strong>93%</strong><small>Match</small></div>
+                    <div class="recommended-places">
+                        <span>Recommended</span>
+                        <b>Rajasthan</b><b>Maldives</b><b>Udaipur</b>
+                    </div>
+                </div>
+
+                <div class="moodtrip-note">
+                    <i class="bi bi-magic"></i>
+                    <span>Your selection changes the recommendation instantly — no page reload required.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<!-- ================= FEATURE 2: UKIYO TRAVEL DNA ================= -->
+<section class="dna-section" id="travel-dna">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">PERSONALIZED TRAVEL</span>
+            <h2>Discover Your <span>Travel DNA</span> 🧬</h2>
+            <p>Tell us what you love. We'll reveal the kind of traveler you are.</p>
+        </div>
+
+        <div class="dna-card">
+            <div class="dna-question">
+                <h4>01. Your perfect morning?</h4>
+                <div class="dna-options">
+                    <div class="dna-option"><input type="radio" name="morning" id="m1" checked><label for="m1">☕ Slow breakfast</label></div>
+                    <div class="dna-option"><input type="radio" name="morning" id="m2"><label for="m2">🌅 Mountain sunrise</label></div>
+                    <div class="dna-option"><input type="radio" name="morning" id="m3"><label for="m3">🏖️ Beach walk</label></div>
+                    <div class="dna-option"><input type="radio" name="morning" id="m4"><label for="m4">🏙️ City exploring</label></div>
+                </div>
+            </div>
+
+            <div class="dna-question">
+                <h4>02. Your travel style?</h4>
+                <div class="dna-options">
+                    <div class="dna-option"><input type="radio" name="style" id="s1" checked><label for="s1">💰 Budget</label></div>
+                    <div class="dna-option"><input type="radio" name="style" id="s2"><label for="s2">✨ Comfort</label></div>
+                    <div class="dna-option"><input type="radio" name="style" id="s3"><label for="s3">👑 Luxury</label></div>
+                    <div class="dna-option"><input type="radio" name="style" id="s4"><label for="s4">🎒 Backpacker</label></div>
+                </div>
+            </div>
+
+            <div class="dna-question">
+                <h4>03. Choose your vibe</h4>
+                <div class="dna-options">
+                    <div class="dna-option"><input type="radio" name="vibe" id="v1" checked><label for="v1">🌊 Calm</label></div>
+                    <div class="dna-option"><input type="radio" name="vibe" id="v2"><label for="v2">🔥 Adventure</label></div>
+                    <div class="dna-option"><input type="radio" name="vibe" id="v3"><label for="v3">❤️ Romantic</label></div>
+                    <div class="dna-option"><input type="radio" name="vibe" id="v4"><label for="v4">🎉 Party</label></div>
+                </div>
+            </div>
+
+            <div class="dna-question">
+                <h4>04. Ideal trip length?</h4>
+                <div class="dna-options">
+                    <div class="dna-option"><input type="radio" name="days" id="d1" checked><label for="d1">2–3 days</label></div>
+                    <div class="dna-option"><input type="radio" name="days" id="d2"><label for="d2">4–6 days</label></div>
+                    <div class="dna-option"><input type="radio" name="days" id="d3"><label for="d3">7+ days</label></div>
+                </div>
+            </div>
+
+            <div class="dna-question mb-0">
+                <h4>05. Who are you travelling with?</h4>
+                <div class="dna-options">
+                    <div class="dna-option"><input type="radio" name="with" id="w1" checked><label for="w1">🧍 Solo</label></div>
+                    <div class="dna-option"><input type="radio" name="with" id="w2"><label for="w2">❤️ Couple</label></div>
+                    <div class="dna-option"><input type="radio" name="with" id="w3"><label for="w3">👯 Friends</label></div>
+                    <div class="dna-option"><input type="radio" name="with" id="w4"><label for="w4">👨‍👩‍👧 Family</label></div>
+                </div>
+            </div>
+
+            <div class="dna-result">
+                <div class="dna-avatar" id="dnaAvatar">🌿</div>
+                <div>
+                    <span>Your current Travel DNA</span>
+                    <h3 id="dnaType">The Balanced Explorer</h3>
+                    <p id="dnaDesc">Curious, flexible and always ready for a meaningful escape.</p>
+                </div>
+                <div class="dna-score"><strong id="dnaScore">88%</strong><small>Travel Match</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEATURE 3: REGRET-FREE TRIP ================= -->
+<section class="regret-section" id="regret-free">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">UKIYO SMART CHOICE</span>
+            <h2>Make It a <span>Regret-Free Trip</span> 🛡️</h2>
+            <p>Choose what you want to avoid. We'll help you travel smarter.</p>
+        </div>
+
+        <div class="regret-card">
+            <div class="regret-options">
+                <label class="regret-option"><input type="checkbox" checked> <strong>💸 Spending too much</strong><small>Keep your trip within budget.</small></label>
+                <label class="regret-option"><input type="checkbox"> <strong>😴 Too much travelling</strong><small>Prefer relaxed travel days.</small></label>
+                <label class="regret-option"><input type="checkbox"> <strong>👥 Too crowded</strong><small>Prefer peaceful places.</small></label>
+                <label class="regret-option"><input type="checkbox"> <strong>🌧️ Bad weather</strong><small>Choose a better travel season.</small></label>
+                <label class="regret-option"><input type="checkbox"> <strong>🍴 Limited food</strong><small>Discover food-friendly destinations.</small></label>
+                <label class="regret-option"><input type="checkbox"> <strong>🏨 Poor accommodation</strong><small>Prioritize verified stays.</small></label>
+            </div>
+
+            <div class="regret-result">
+                <div class="regret-score"><strong id="regretRisk">12%</strong><small>Risk</small></div>
+                <div>
+                    <h3 id="regretTitle">🌟 Excellent Match</h3>
+                    <p id="regretText">Your preferences indicate a low regret risk. <strong>Kerala</strong> is currently a strong match for a comfortable, balanced getaway.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEATURE 4: SMART TRIP PLANNER ================= -->
+<section class="planner-section" id="planner">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">PLAN IT YOUR WAY</span>
+            <h2>Smart <span>Trip Planner</span> 🎒</h2>
+            <p>Build a quick trip idea using your destination, days and budget.</p>
+        </div>
+
+        <div class="planner-card">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label>Destination</label>
+                    <select id="plannerDestination">
+                        <option value="goa">Goa</option>
+                        <option value="kashmir">Kashmir</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="andaman">Andaman</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Trip Duration</label>
+                    <select id="plannerDays">
+                        <option value="3">3 Days</option>
+                        <option value="5" selected>5 Days</option>
+                        <option value="7">7 Days</option>
+                        <!--<option value="10">10 Days</option>-->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Budget</label>
+                    <select id="plannerBudget">
+                        <option>₹10,000 – ₹20,000</option>
+                        <option selected>₹20,000 – ₹40,000</option>
+                        <option>₹40,000 – ₹75,000</option>
+                        <option>₹75,000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn primary-btn mt-4" id="generatePlan">
+                Generate My Plan <i class="bi bi-stars"></i>
+            </button>
+
+            <!-- Detailed day-wise itinerary (large fonts) rendered by js/site.js -->
+            <div class="planner-itinerary" id="plannerItinerary"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= DESTINATIONS ================= -->
+
+    <section class="section-space" id="destinations">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+
+                    Popular Destinations
+
+                </h2>
+
+                <p>
+
+                    Explore the world's most beautiful places.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4" id="destinationGrid">
+                <!-- Cards are rendered from js/data.js by js/site.js -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn hero-outline js-open-wishlist">
+                    <i class="bi bi-heart"></i> View my wishlist
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PACKAGES ================= -->
+
+    <section class="package-section" id="packages">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="text-white">
+
+                    Trending Packages
+
+                </h2>
+
+            </div>
+
+            <div class="row g-4" id="packageGrid">
+                <!-- Cards are rendered from js/data.js by js/site.js -->
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= WHY US ================= -->
+
+    <section class="section-space">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+
+                    Why Choose Ukiyo Travel?
+
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-3">
+
+                    <div class="feature-box">
+
+                        <div class="icon">✈️</div>
+
+                        <h5>Best Tours</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="feature-box">
+
+                        <div class="icon">🏨</div>
+
+                        <h5>Luxury Hotels</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="feature-box">
+
+                        <div class="icon">🛡️</div>
+
+                        <h5>Safe Journey</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="feature-box">
+
+                        <div class="icon">💬</div>
+
+                        <h5>24/7 Support</h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOTELS ================= -->
+    <section class="hotel-section" id="hotels">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="hotel-photo">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85"
+                             alt="Luxury hotel">
+                        <div class="hotel-label">
+                            <i class="bi bi-building"></i>
+                            <div>
+                                <strong>550+ Hotels</strong>
+                                <small>Across India</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="section-tag">STAY IN COMFORT</span>
+                    <h2 class="hotel-title">Find Your Perfect <span>Stay</span></h2>
+                    <p class="hotel-text">
+                        From boutique hotels to luxury resorts, discover comfortable
+                        stays selected for location, service and value.
+                    </p>
+                    <div class="hotel-points">
+                        <div><i class="bi bi-check-circle-fill"></i> Verified properties</div>
+                        <div><i class="bi bi-check-circle-fill"></i> Best available prices</div>
+                        <div><i class="bi bi-check-circle-fill"></i> Easy booking process</div>
+                    </div>
+                    <button type="button" class="btn primary-btn js-open-hotels">Explore Hotels <i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section-space gallery-section" id="gallery">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">TRAVEL MOMENTS</span>
+                <h2 class="section-title">Explore Our Gallery</h2>
+                <p>Beautiful places and unforgettable moments.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-large">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Travel landscape">
+                    <div class="gallery-overlay">Adventure</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Mountain travel">
+                    <div class="gallery-overlay">Nature</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=700&q=85" alt="Lake destination">
+                    <div class="gallery-overlay">Relax</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=700&q=85" alt="Travel destination">
+                    <div class="gallery-overlay">Explore</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=85" alt="Beautiful landscape">
+                    <div class="gallery-overlay">Escape</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRAVELLER REVIEWS ================= -->
+    <section class="section-space reviews-section" id="reviews">
+        <div class="container">
+            <div class="text-center mb-4">
+                <span class="section-tag">TRAVELLER REVIEWS</span>
+                <h2 class="section-title">What Our Travellers Say</h2>
+                <p class="section-sub" id="reviewsSummary">Loading reviews…</p>
+            </div>
+            <div class="row g-3" id="reviewsGrid"></div>
+            <p class="text-center mt-3 reviews-hint">Booked and paid for a trip? Open <a href="#" class="js-open-trips">My Trips</a> to review it. Reviews appear here once approved by our team.</p>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section-space contact-section" id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Plan Your Dream Trip</h2>
+                <p>Tell us where you want to go and our team will help you.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <div class="contact-alert ok" id="contactOk"></div>
+                        <div class="contact-alert err" id="contactErr"></div>
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label>Your Name</label>
+                                    <input type="text" id="cName" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Email Address</label>
+                                    <input type="email" id="cEmail" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Destination</label>
+                                    <input type="text" id="cDestination" class="form-control" placeholder="Where do you want to go?">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                    <input type="tel" id="cPhone" class="form-control" placeholder="Your phone number">
+                                </div>
+                                <div class="col-12">
+                                    <label>Message</label>
+                                    <textarea id="cMessage" class="form-control" rows="4" placeholder="Tell us about your travel plan..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn primary-btn w-100" id="contactSubmit">Send Enquiry <i class="bi bi-send"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="container text-center">
+
+            <h2>
+
+                Your Next Adventure Starts Here
+
+            </h2>
+
+            <p>
+
+                Book your dream vacation today.
+
+            </p>
+
+            <button class="btn btn-warning btn-lg js-cta-book">
+
+                Book Your Trip
+
+            </button>
+
+        </div>
+
+    </section>
+
+    
+<!-- ================= FEATURE 6: SMART MATCH SCORES ================= -->
+<section class="match-section" id="smart-match">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">SMART RECOMMENDATIONS</span>
+            <h2>Your Destination <span>Match Scores</span> 🗺️</h2>
+            <p>Live scores from your Mood, Travel DNA and Regret-Free choices above.</p>
+        </div>
+
+        <!-- Smart Destination banner (top pick) -->
+        <div class="smart-dest" id="smartDestination"><!-- filled by js/score.js --></div>
+
+        <!-- Live match grid -->
+        <div class="row g-4" id="matchGrid"><!-- filled by js/score.js --></div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                    <h3>
+
+                        ✈️ Ukiyo Travel
+
+                    </h3>
+
+                    <p>
+
+                        Making every journey unforgettable.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li><a href="#home">Home</a></li>
+
+                        <li><a href="#packages">Packages</a></li>
+
+                        <li><a href="#hotels">Hotels</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Contact
+
+                    </h5>
+
+                    <p>
+
+                        Ahmedabad, Gujarat
+
+                    </p>
+
+                    <p>
+
+                        info@ukiyotravel.com
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center">
+
+                © 2026 Ukiyo Travel. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= UKIYO TRAVEL CHATBOX ================= -->
+    <input type="checkbox" id="chat-toggle" class="chat-toggle">
+
+    <label for="chat-toggle" class="chat-button" title="Open Ukiyo Assistant">
+        <i class="bi bi-chat-dots-fill"></i>
+        <span class="chat-notification">1</span>
+    </label>
+
+    <div class="chatbox">
+        <div class="chat-header">
+            <div class="chat-agent">
+                <div class="agent-avatar"><i class="bi bi-airplane-fill"></i></div>
+                <div>
+                    <strong>Ukiyo Assistant</strong>
+                    <small><span class="online-dot"></span> Online now</small>
+                </div>
+            </div>
+            <label for="chat-toggle" class="chat-close" title="Close chat">
+                <i class="bi bi-x-lg"></i>
+            </label>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="bot-message">
+                <strong>Hello! 👋</strong>
+                <p>Welcome to Ukiyo Travel. How can I help you today?</p>
+            </div>
+
+            <div class="quick-options" id="chatQuick">
+                <button type="button" data-q="destinations">🌴 Find destinations</button>
+                <button type="button" data-q="packages">🎒 Tour packages</button>
+                <button type="button" data-q="hotel">🏨 Find a hotel</button>
+                <button type="button" data-q="booking">📅 Booking help</button>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type your message..." aria-label="Chat message">
+            <button type="button" id="chatSend" title="Send message">
+                <i class="bi bi-send-fill"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <div class="wishlist-toast" id="wishlistToast">❤️ Added to your Ukiyo wishlist</div>
+
+<script>
+/* Ukiyo premium navbar: glass effect appears after scrolling */
+(function () {
+    const navbar = document.querySelector(".custom-nav");
+    if (!navbar) return;
+
+    function updateNavbar() {
+        if (window.scrollY > 25) {
+            navbar.classList.add("nav-scrolled");
+        } else {
+            navbar.classList.remove("nav-scrolled");
+        }
+    }
+
+    updateNavbar();
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+})();
+</script>
+
+<!-- ================= MODALS ================= -->
+
+<!-- Destination detail -->
+<div class="modal fade" id="destinationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content ukiyo-modal" id="destinationModalContent">
+      <!-- filled by site.js -->
+    </div>
+  </div>
+</div>
+
+<!-- Booking form -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-suitcase-lg"></i> Book your trip</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ukiyo-alert err" id="bookingErr"></div>
+        <div class="booking-summary" id="bookingSummary"></div>
+        <form id="bookingForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>Travel date</label>
+              <input type="date" id="bkDate" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label>Travellers</label>
+              <input type="number" id="bkTravellers" class="form-control" min="1" max="30" value="2" required>
+            </div>
+            <div class="col-12">
+              <label>Notes (optional)</label>
+              <textarea id="bkNotes" class="form-control" rows="2" maxlength="500" placeholder="Any preferences?"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn primary-btn w-100 mt-3" id="bookingSubmit">
+            Confirm booking <i class="bi bi-check2-circle"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment (opens after "Confirm booking") -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-shield-lock"></i> Complete your payment</h5>
+        <button type="button" class="btn-close" id="payClose" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Step 1: summary + method + Pay Now -->
+        <div id="payStepForm">
+          <div class="pay-summary" id="paySummary"><!-- filled by site.js --></div>
+
+          <div class="pay-label">Select payment method</div>
+          <div class="pay-methods" id="payMethods" role="radiogroup" aria-label="Payment method">
+            <label class="pay-method"><input type="radio" name="payMethod" value="upi" checked><span><i class="bi bi-phone"></i> UPI</span></label>
+            <label class="pay-method"><input type="radio" name="payMethod" value="card"><span><i class="bi bi-credit-card-2-front"></i> Credit / Debit Card</span></label>
+            <label class="pay-method"><input type="radio" name="payMethod" value="netbanking"><span><i class="bi bi-bank"></i> Net Banking</span></label>
+          </div>
+
+          <div id="payDetails">
+            <div class="pay-panel" data-panel="upi">
+              <label for="payUpi">UPI ID</label>
+              <input type="text" id="payUpi" class="form-control" placeholder="yourname@bank" autocomplete="off" inputmode="email">
+            </div>
+            <div class="pay-panel" data-panel="card" hidden>
+              <div class="row g-2">
+                <div class="col-12">
+                  <label for="payCardNo">Card number</label>
+                  <input type="text" id="payCardNo" class="form-control" placeholder="1234 5678 9012 3456" inputmode="numeric" autocomplete="cc-number" maxlength="23">
+                </div>
+                <div class="col-12">
+                  <label for="payCardName">Name on card</label>
+                  <input type="text" id="payCardName" class="form-control" placeholder="As printed on the card" autocomplete="cc-name">
+                </div>
+                <div class="col-6">
+                  <label for="payCardExp">Expiry (MM/YY)</label>
+                  <input type="text" id="payCardExp" class="form-control" placeholder="MM/YY" inputmode="numeric" autocomplete="cc-exp" maxlength="5">
+                </div>
+                <div class="col-6">
+                  <label for="payCardCvv">CVV</label>
+                  <input type="password" id="payCardCvv" class="form-control" placeholder="•••" inputmode="numeric" autocomplete="cc-csc" maxlength="4">
+                </div>
+              </div>
+            </div>
+            <div class="pay-panel" data-panel="netbanking" hidden>
+              <label for="payBank">Select your bank</label>
+              <select id="payBank" class="form-control"><option value="">Choose a bank…</option></select>
+            </div>
+          </div>
+          <div class="pay-gateway-note" id="payGatewayNote" hidden>You'll enter your payment details securely on the next screen.</div>
+
+          <div class="ukiyo-alert err" id="payErr"></div>
+          <div class="pay-test-note" id="payTestNote" hidden><i class="bi bi-info-circle"></i> Test mode — no real money is charged.</div>
+
+          <button type="button" class="btn primary-btn w-100 mt-3" id="payNow">
+            <i class="bi bi-lock-fill"></i> Pay Now <span id="payNowAmt"></span>
+          </button>
+        </div>
+
+        <!-- Step 2: processing -->
+        <div id="payStepProcessing" class="pay-state" hidden>
+          <div class="pay-spinner" aria-hidden="true"></div>
+          <h6>Processing your payment…</h6>
+          <p>Please don't close or refresh this window.</p>
+        </div>
+
+        <!-- Step 3a: success -->
+        <div id="payStepSuccess" class="pay-state" hidden>
+          <div class="pay-icon ok"><i class="bi bi-check-lg"></i></div>
+          <h6>Payment Successful! Your booking has been confirmed.</h6>
+          <div class="pay-ref">
+            <small>Booking reference</small>
+            <strong id="payRef">—</strong>
+            <button type="button" class="pay-copy" id="payCopy" title="Copy reference"><i class="bi bi-clipboard"></i></button>
+          </div>
+          <div class="pay-receipt" id="payReceipt"></div>
+          <div class="pay-actions">
+            <button type="button" class="btn card-btn" id="payViewTrips">View My Trips</button>
+            <button type="button" class="btn primary-btn" data-bs-dismiss="modal">Done</button>
+          </div>
+        </div>
+
+        <!-- Step 3b: failed -->
+        <div id="payStepFailed" class="pay-state" hidden>
+          <div class="pay-icon bad"><i class="bi bi-x-lg"></i></div>
+          <h6>Payment Failed. Please try again.</h6>
+          <p>Your booking is saved as pending. You haven't been confirmed until payment succeeds.</p>
+          <div class="pay-actions">
+            <button type="button" class="btn card-btn" data-bs-dismiss="modal">Pay later</button>
+            <button type="button" class="btn primary-btn" id="payRetry"><i class="bi bi-arrow-repeat"></i> Try again</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hotels browser -->
+<div class="modal fade" id="hotelsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-building"></i> Browse Hotels</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="hotelsBody"><!-- filled by site.js --></div>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery lightbox -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content ukiyo-modal gallery-modal">
+      <button type="button" class="btn-close btn-close-white gallery-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <img id="galleryModalImg" src="" alt="Gallery image">
+    </div>
+  </div>
+</div>
+
+<!-- Wishlist -->
+<div class="modal fade" id="wishlistModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-heart-fill"></i> My Wishlist</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="wishlistBody"><!-- filled by site.js --></div>
+    </div>
+  </div>
+</div>
+
+<!-- My Trips (bookings) -->
+<div class="modal fade" id="tripsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-suitcase2"></i> My Trips</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="tripsBody"><!-- filled by site.js --></div>
+    </div>
+  </div>
+</div>
+
+<!-- Write a review -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ukiyo-modal">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-star"></i> Review your trip</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-2"><strong id="reviewTrip"></strong></p>
+        <div class="star-input" id="reviewStars" role="radiogroup" aria-label="Rating">
+          <button type="button" data-v="1" aria-label="1 star"><i class="bi bi-star"></i></button><button type="button" data-v="2" aria-label="2 stars"><i class="bi bi-star"></i></button><button type="button" data-v="3" aria-label="3 stars"><i class="bi bi-star"></i></button><button type="button" data-v="4" aria-label="4 stars"><i class="bi bi-star"></i></button><button type="button" data-v="5" aria-label="5 stars"><i class="bi bi-star"></i></button>
+        </div>
+        <textarea class="form-control mt-3" id="reviewText" rows="4" maxlength="1000" placeholder="Tell other travellers about your trip (optional)"></textarea>
+        <div class="contact-alert err" id="reviewErr" style="display:none"></div>
+        <button class="btn primary-btn w-100 mt-3" id="reviewSubmit">Submit review</button>
+        <p class="small text-muted mt-2 mb-0">Your review will be shown on the website after our team approves it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="config.js"></script>
+    <script src="js/data.js"></script>
+<script src="js/score.js"></script>
+<script src="js/date-rules.js"></script>
+<script src="js/auth-api.js"></script>
+<script src="js/site.js"></script>
+
+</body>
+
+</html>
